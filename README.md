@@ -6,22 +6,30 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Set your information
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+export const environment = {
+    production: false,
 
-## Build
+    // CHANGE HERE FOR LOCAL TESTING
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    APP_ID: 'ENTER-YOUR-APP-HERE',
+    USER_ID: 'ENTER-YOUR-USER-ID-HERE',
+    NICKNAME: 'ANY-NICKNAME-HERE'
 
-## Running unit tests
+};
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### All starts here
 
-## Running end-to-end tests
+```app.component.ts``` The connection is made here.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Sendbird service
 
-## Further help
+```sendbird.service.ts``` contains very basic code for setting SyncManager and connecting to Sendbird SDK (if Internet is available)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+If no Internet available, you should be able to see the list of channels and the messages you downloaded (you must click on a channel to get its messages stored in local cache. Otherwise, SyncManager can't show any message)
+
+
+
