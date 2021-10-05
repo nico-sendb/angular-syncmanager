@@ -1,0 +1,15 @@
+
+<div class="alert alert-primary" role="alert">
+    ACTION FROM SyncManager: {{ action }}
+</div>
+
+<div *ngIf="!channels">
+    No channels
+</div>
+
+<div class="border-bottom" 
+    *ngFor="let ch of channels" 
+    style="width:200px; padding:0.5rem; cursor:pointer; word-wrap:break-word" 
+    (click)="selectChannel(ch)">
+    {{ ch.url }}
+</div>

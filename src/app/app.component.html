@@ -1,0 +1,26 @@
+<div class="container">
+
+    <div class="alert alert-warning" role="alert" *ngIf="!connected">
+        Connecting to SyncManager...
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        SyncManager OK: {{ connected }} <br>
+        Sendbird SDK connected: {{ sendbirdSdkConnected }}
+    </div>
+
+    <table class="table" *ngIf="connected">
+        <tr>
+            <td valign="top" style="width:200px">
+                <app-channels-list></app-channels-list>
+            </td>
+            <td valign="top">
+                <app-messages-list></app-messages-list>
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+
+<router-outlet></router-outlet>
